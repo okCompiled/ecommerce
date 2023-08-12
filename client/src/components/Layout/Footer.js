@@ -6,13 +6,12 @@ const Footer = () => {
     <div className="bg-dark text-light p-3">
       <h1 className="text-center">All Right Reserved &copy; sazidTech</h1>
       <p className="text-center mt-3">
-        <Link to="/about">About<Link/>
-        <Link to="/about">About<Link/>
-        <Link to="/about">About<Link/>
-        </p>
-      
+        <Link to="/about">About</Link>
+        <Link to="/about">About</Link>
+        <Link to="/about">About</Link>
+      </p>
     </div>
-)    
+  );
 };
 
 export default Footer;
