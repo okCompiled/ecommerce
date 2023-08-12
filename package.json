@@ -9,7 +9,7 @@
     "server": "nodemon server.js"
   },
   "keywords": [],
-  "author": "Techinfoyt",
+  "author": "Sazid Tech",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.1.0",
