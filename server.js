@@ -1,38 +1,42 @@
 import express from "express";
 import colors from "colors";
 import dotenv from "dotenv";
-import env from "process";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
-import cors from 'cors'
+import authRoutes from "./routes/authRoute.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import cors from "cors";
 
-// configure env
+//configure env
 dotenv.config();
 
-// database config
+//databse config
 connectDB();
-// rest object
+
+//rest object
 const app = express();
 
-// middlewares
+//middelwares
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-// routes
+//routes
 app.use("/api/v1/auth", authRoutes);
-// rest api
+app.use("/api/v1/category", categoryRoutes);
+
+//rest api
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to e commerce app</h1>");
+  res.send("<h1>Welcome to ecommerce app</h1>");
 });
 
-// PORT
+//PORT
 const PORT = process.env.PORT || 8080;
-// run listen
+
+//run listen
 app.listen(PORT, () => {
   console.log(
-    `Server running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan
+    `Server Running on ${process.env.DEV_MODE} mode on port ${PORT}`.bgCyan
       .white
   );
 });
